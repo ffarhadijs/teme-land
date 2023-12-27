@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Include Slick Carousel CSS and JS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+
+    <script src="./js/main.js"></script>
+    <title>Product</title>
+  </head>
+  <body style="background-color: var(--gray)">
+    <!------------- header ------------->
+    <header class="container-xl">
+      <div class="top-header">
+        <div>
+          <button
+            class="menu-btn d-lg-none d-inline-block"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#sidebar"
+          >
+            <img src="./assets/icons/menu.png" alt="menu" />
+          </button>
+          <img src="./assets/icons/logo.png" alt="logo" />
+        </div>
+        <div
+          class="d-flex flex-row align-items-center"
+          style="column-gap: 20px"
+        >
+          <button class="simple-btn d-none d-lg-inline-block">
+            ورود / ثبت نام
+          </button>
+          <button class="filled-btn d-none d-lg-inline-block">
+            سبد خرید
+            <img src="./assets/icons/cart2.png" alt="cart" />
+          </button>
+          <button class="search-btn d-lg-none d-flex">
+            <img src="./assets/icons/search2.png" alt="search" />
+          </button>
+          <button class="cart-button d-lg-none d-flex">
+            <img src="./assets/icons/cart2.png" alt="cart" />
+          </button>
+        </div>
+      </div>
+      <div class="navbar-list">
+        <a href="#">خانه</a>
+        <a href="#">بلوز و شومیز</a>
+        <a href="#">اسپرت و راحتی</a>
+        <a href="#">شلوار</a>
+        <a href="#">جوراب</a>
+        <a href="#">کیف</a>
+        <a href="#">دامن</a>
+        <a href="#">روپوش</a>
+        <a href="#">پیراهن</a>
+      </div>
+    </header>
+    <!--------------- sidebar ----------------->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar">
+      <div class="offcanvas-header" style="border-bottom: 1px solid black">
+        <button
+          type="button"
+          style="margin-right: auto"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <a href="#">خانه</a>
+        <a href="#">بلوز و شومیز</a>
+        <a href="#">اسپرت و راحتی</a>
+        <a href="#">شلوار</a>
+        <a href="#">جوراب</a>
+        <a href="#">کیف</a>
+        <a href="#">دامن</a>
+        <a href="#">روپوش</a>
+        <a href="#">پیراهن</a>
+      </div>
+    </div>
+    <main class="container-xl">
+      <!------------- main section ------------->
+      <section class="product-section" style="margin-bottom: 50px">
+        <div class="row">
+          <div class="order-1 order-lg-0 col-12 col-lg-6 product-details">
+            <h1>مانتو نارسیس</h1>
+            <p class="product-price">1.550.000 تومان</p>
+            <div style="margin-bottom: 30px">
+              <p class="product-info-title">مشخصات:</p>
+              <p class="product-info">کد محصول : 125412</p>
+              <p class="product-info">جنس پشمی</p>
+              <p class="product-info">بسیار با کیفیت</p>
+              <p class="product-info">فری سایز</p>
+            </div>
+            <div>
+              <label for="color">رنگ:</label>
+              <select class="form-select" id="color">
+                <option selected disabled>انتخاب کنید</option>
+                <option value="1">زرد</option>
+                <option value="2">قرمز</option>
+                <option value="3">سبز</option>
+              </select>
+
+              <label for="size">سایز:</label>
+              <select class="form-select" id="size">
+                <option selected disabled>انتخاب کنید</option>
+                <option value="1">42</option>
+                <option value="2">44</option>
+                <option value="3">46</option>
+              </select>
+            </div>
+
+            <div
+              class="d-flex flex-row align-items-center justify-content-between"
+              style="
+                border-bottom: 1px solid gray;
+                padding-bottom: 40px;
+                padding-top: 20px;
+              "
+            >
+              <button class="product-favorite">
+                <img src="./assets/icons/favorite.png" alt="favorite" />
+                <span class="d-none d-lg-inline-block">
+                  افزودن به علاقه مندی
+                </span>
+              </button>
+              <div
+                class="d-flex flex-row align-items-center justify-content-start"
+                style="gap: 10px"
+              >
+                <div class="number-input">
+                  <button
+                    onclick="decreaseNumber()"
+                    style="border-left: none; border-radius: 0 6px 6px 0"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    id="numberInput"
+                    value="0"
+                    oninput="updateNumber(this.value)"
+                  />
+                  <button
+                    onclick="increaseNumber()"
+                    style="border-right: none; border-radius: 6px 0 0 6px"
+                  >
+                    +
+                  </button>
+                </div>
+                <button class="add-to-cart-btn">افزودن به سبد خرید</button>
+              </div>
+            </div>
+            <div>
+              <div style="margin: 40px 0 10px">
+                <span style="font-weight: 400; font-size: 14px"
+                  >شناسه محصول:</span
+                >
+                <span style="font-weight: 400; font-size: 13px; color: gray"
+                  >1231546</span
+                >
+              </div>
+              <div style="margin-bottom: 10px">
+                <span style="font-weight: 400; font-size: 14px">دسته:</span>
+                <span style="font-weight: 400; font-size: 13px; color: gray"
+                  >روپوش، مانتو</span
+                >
+              </div>
+              <div style="margin-bottom: 10px">
+                <span style="font-weight: 400; font-size: 14px">برچسب:</span>
+                <span style="font-weight: 400; font-size: 13px; color: gray"
+                  >خرید مانتو، خرید روپوش</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-12 col-lg-6 product-img-section"
+            style="max-height: 900px; min-height: 600px"
+          >
+            <img
+              src="./assets/images/pic 1.png"
+              alt="product"
+              class="product-main-img"
+            />
+            <div
+              class="w-100 row product-img-list"
+              style="
+                margin-right: 0 !important;
+                margin-top: 10px !important;
+                height: auto;
+              "
+            >
+              <img
+                src="./assets/images/pic 1.png"
+                alt="product"
+                class="col-3"
+              />
+              <img
+                src="./assets/images/pic 1.png"
+                alt="product"
+                class="col-3"
+              />
+              <img
+                src="./assets/images/pic 1.png"
+                alt="product"
+                class="col-3"
+              />
+              <img
+                src="./assets/images/pic 1.png"
+                alt="product"
+                class="col-3"
+                style="padding-left: 0 !important"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="description-section row">
+          <div class="col-12" style="border-top: 1px solid gray">
+            <h2 style="font-size: 20px; font-weight: 500; margin: 20px 0">
+              توضیحات:
+            </h2>
+            <p
+              style="
+                text-align: justify;
+                color: gray;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 24px;
+              "
+            >
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+              استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+              در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
+              نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
+              کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان
+              جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای
+              طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان
+              فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری
+              موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد
+              نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل
+              دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!------------- footer ------------->
+      <footer>
+        <div class="row">
+          <div class="col-12 col-lg-4 ps-0 ps-lg-4 mb-4 mb-lg-0">
+            <h3>دسترسی سریع</h3>
+            <div
+              class="d-flex flex-lg-column flex-row justify-content-between flex-wrap"
+            >
+              <a href="#">صفحه اصلی</a>
+              <a href="#">فروشگاه</a>
+              <a href="#">پشتیبانی</a>
+              <a href="#">پیگیری سفارشات</a>
+              <a href="#">درباره ما</a>
+              <a href="#">تماس با ما</a>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4 ps-0 ps-lg-4 mb-4 mb-lg-0">
+            <h3>درباره ما</h3>
+            <p>
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+              استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+              در ستون و سطرآنچنان که لازم است. لورم ایپسوم متن ساختگی با تولید
+              سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
+              چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم
+              است.
+            </p>
+          </div>
+          <div class="col-12 col-lg-4">
+            <h3>ارتباط با ما</h3>
+            <div style="margin-bottom: 15px">
+              <span>تلفن پشتیبانی: </span>
+              <a href="#" class="" style="font-weight: 300"> 09123456789</a>
+              <span> / </span>
+              <a href="#" style="font-weight: 300"> 1234 - 021 </a>
+            </div>
+            <div style="margin-bottom: 20px">
+              <span>آدرس:</span>
+              <span style="font-weight: 300"
+                >لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</span
+              >
+            </div>
+            <div class="social-icons">
+              <a href="#"
+                ><img src="./assets/icons/Telegram.png" alt="telegram"
+              /></a>
+              <a href="#"
+                ><img src="./assets/icons/instagram.png" alt="instagram"
+              /></a>
+            </div>
+          </div>
+        </div>
+        <div class="foot-note">
+          <p style="margin: 10px 0 10px 0; display: inline-block">
+            کلیه حقوق مادی و معنوی این سایت محفوظ است
+          </p>
+        </div>
+      </footer>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
