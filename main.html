@@ -28,38 +28,70 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
+
+    <script src="./js/main.js"></script>
     <title>Main</title>
   </head>
   <body style="background-color: var(--gray)">
-    <main class="container-xl" style="margin-top: 50px">
-      <!------------- header ------------->
-      <header style="margin-bottom: 50px">
-        <div class="top-header">
+    <!------------- header ------------->
+    <header class="container-xl">
+      <div class="top-header">
+        <div>
+          <button class="menu-btn d-lg-none d-inline-block" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+            <img src="./assets/icons/menu.png" alt="menu" />
+          </button>
           <img src="./assets/icons/logo.png" alt="logo" />
-          <div
-            class="d-flex flex-row align-items-center"
-            style="column-gap: 20px"
-          >
-            <button class="simple-btn">ورود / ثبت نام</button>
-            <button class="filled-btn">
-              سبد خرید
-              <img src="./assets/icons/cart2.png" alt="cart" />
-            </button>
-          </div>
         </div>
-        <div class="navbar-list">
-          <a href="#">خانه</a>
-          <a href="#">بلوز و شومیز</a>
-          <a href="#">اسپرت و راحتی</a>
-          <a href="#">شلوار</a>
-          <a href="#">جوراب</a>
-          <a href="#">کیف</a>
-          <a href="#">دامن</a>
-          <a href="#">روپوش</a>
-          <a href="#">پیراهن</a>
+        <div
+          class="d-flex flex-row align-items-center"
+          style="column-gap: 20px"
+        >
+          <button class="simple-btn d-none d-lg-inline-block">
+            ورود / ثبت نام
+          </button>
+          <button class="filled-btn d-none d-lg-inline-block">
+            سبد خرید
+            <img src="./assets/icons/cart2.png" alt="cart" />
+          </button>
+          <button class="search-btn d-lg-none d-flex">
+            <img src="./assets/icons/search2.png" alt="search" />
+          </button>
+          <button class="cart-button d-lg-none d-flex">
+            <img src="./assets/icons/cart2.png" alt="cart" />
+          </button>
         </div>
-      </header>
-
+      </div>
+      <div class="navbar-list">
+        <a href="#">خانه</a>
+        <a href="#">بلوز و شومیز</a>
+        <a href="#">اسپرت و راحتی</a>
+        <a href="#">شلوار</a>
+        <a href="#">جوراب</a>
+        <a href="#">کیف</a>
+        <a href="#">دامن</a>
+        <a href="#">روپوش</a>
+        <a href="#">پیراهن</a>
+      </div>
+    </header>
+    <!--------------- sidebar ----------------->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar">
+      <div class="offcanvas-header" style="border-bottom: 1px solid black;">
+        <button type="button" style="margin-right: auto;" class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <a href="#">خانه</a>
+        <a href="#">بلوز و شومیز</a>
+        <a href="#">اسپرت و راحتی</a>
+        <a href="#">شلوار</a>
+        <a href="#">جوراب</a>
+        <a href="#">کیف</a>
+        <a href="#">دامن</a>
+        <a href="#">روپوش</a>
+        <a href="#">پیراهن</a>
+        
+      </div>
+    </div>
+    <main class="container-xl">
       <!------------- carousel ------------->
       <section style="position: relative">
         <div class="carousel carousel-dark slide">
@@ -104,7 +136,7 @@
           </button>
         </div>
         <!------------- search-box ------------->
-        <div class="search-box">
+        <div class="search-box d-none d-lg-inline-block">
           <div>
             <input type="text" placeholder="جستجوی محصول..." />
             <button>
@@ -119,7 +151,8 @@
         style="display: flex; flex-direction: column"
       >
         <h2>آخرین محصولات</h2>
-        <div class="row" style="margin: 30px 0">
+        <!-- desktop -->
+        <div class="row d-none d-lg-flex" style="margin: 30px 0">
           <div class="col-3 product-item">
             <div class="item-img-container">
               <img src="./assets/images/pic 1.png" alt="product" />
@@ -207,7 +240,129 @@
               </p>
             </div>
           </div>
-          <div class="col-3 product-item" style="padding-left: 0 !important">
+          <div class="col-3 product-item">
+            <div class="item-img-container">
+              <img src="./assets/images/pic 1.png" alt="product" />
+              <div class="button-container">
+                <button class="item-button">
+                  انتخاب مشخصات
+                  <img src="./assets/icons/cart2.png" alt="cart" />
+                </button>
+                <button class="item-button">
+                  افزودن به علاقه مندی
+                  <img src="./assets/icons/favorite.png" alt="favorite" />
+                </button>
+              </div>
+            </div>
+            <div
+              class="item-details"
+              style="background-color: white; border-radius: 0 0 20px 20px"
+            >
+              <p class="item-title">لورم ایپسوم متن ساختگی</p>
+              <p class="item-description">
+                لورم متن ساختگی با تولید سادگی نامفهوم
+              </p>
+              <p
+                style="margin-bottom: 0; text-align: end; color: var(--primary)"
+              >
+                399.000 تومان
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- mobile -->
+        <div
+          class="slick-slider-products d-lg-none d-flex"
+          style="margin: 30px 0"
+        >
+          <div class="col-3 product-item">
+            <div class="item-img-container">
+              <img src="./assets/images/pic 1.png" alt="product" />
+              <div class="button-container">
+                <button class="item-button">
+                  انتخاب مشخصات
+                  <img src="./assets/icons/cart2.png" alt="cart" />
+                </button>
+                <button class="item-button">
+                  افزودن به علاقه مندی
+                  <img src="./assets/icons/favorite.png" alt="favorite" />
+                </button>
+              </div>
+            </div>
+            <div
+              class="item-details"
+              style="background-color: white; border-radius: 0 0 20px 20px"
+            >
+              <p class="item-title">لورم ایپسوم متن ساختگی</p>
+              <p class="item-description">
+                لورم متن ساختگی با تولید سادگی نامفهوم
+              </p>
+              <p
+                style="margin-bottom: 0; text-align: end; color: var(--primary)"
+              >
+                399.000 تومان
+              </p>
+            </div>
+          </div>
+          <div class="col-3 product-item">
+            <div class="item-img-container">
+              <img src="./assets/images/pic 1.png" alt="product" />
+              <div class="button-container">
+                <button class="item-button">
+                  انتخاب مشخصات
+                  <img src="./assets/icons/cart2.png" alt="cart" />
+                </button>
+                <button class="item-button">
+                  افزودن به علاقه مندی
+                  <img src="./assets/icons/favorite.png" alt="favorite" />
+                </button>
+              </div>
+            </div>
+            <div
+              class="item-details"
+              style="background-color: white; border-radius: 0 0 20px 20px"
+            >
+              <p class="item-title">لورم ایپسوم متن ساختگی</p>
+              <p class="item-description">
+                لورم متن ساختگی با تولید سادگی نامفهوم
+              </p>
+              <p
+                style="margin-bottom: 0; text-align: end; color: var(--primary)"
+              >
+                399.000 تومان
+              </p>
+            </div>
+          </div>
+          <div class="col-3 product-item">
+            <div class="item-img-container">
+              <img src="./assets/images/pic 1.png" alt="product" />
+              <div class="button-container">
+                <button class="item-button">
+                  انتخاب مشخصات
+                  <img src="./assets/icons/cart2.png" alt="cart" />
+                </button>
+                <button class="item-button">
+                  افزودن به علاقه مندی
+                  <img src="./assets/icons/favorite.png" alt="favorite" />
+                </button>
+              </div>
+            </div>
+            <div
+              class="item-details"
+              style="background-color: white; border-radius: 0 0 20px 20px"
+            >
+              <p class="item-title">لورم ایپسوم متن ساختگی</p>
+              <p class="item-description">
+                لورم متن ساختگی با تولید سادگی نامفهوم
+              </p>
+              <p
+                style="margin-bottom: 0; text-align: end; color: var(--primary)"
+              >
+                399.000 تومان
+              </p>
+            </div>
+          </div>
+          <div class="col-3 product-item">
             <div class="item-img-container">
               <img src="./assets/images/pic 1.png" alt="product" />
               <div class="button-container">
@@ -245,7 +400,8 @@
         style="display: flex; flex-direction: column"
       >
         <h2>پرطرفدار</h2>
-        <div class="row" style="margin: 30px 0">
+        <!-- desktop -->
+        <div class="row d-none d-lg-flex" style="margin: 30px 0">
           <div class="col-3 product-item">
             <div class="item-img-container">
               <img src="./assets/images/pic 1.png" alt="product" />
@@ -333,7 +489,129 @@
               </p>
             </div>
           </div>
-          <div class="col-3 product-item" style="padding-left: 0 !important">
+          <div class="col-3 product-item">
+            <div class="item-img-container">
+              <img src="./assets/images/pic 1.png" alt="product" />
+              <div class="button-container">
+                <button class="item-button">
+                  انتخاب مشخصات
+                  <img src="./assets/icons/cart2.png" alt="cart" />
+                </button>
+                <button class="item-button">
+                  افزودن به علاقه مندی
+                  <img src="./assets/icons/favorite.png" alt="favorite" />
+                </button>
+              </div>
+            </div>
+            <div
+              class="item-details"
+              style="background-color: white; border-radius: 0 0 20px 20px"
+            >
+              <p class="item-title">لورم ایپسوم متن ساختگی</p>
+              <p class="item-description">
+                لورم متن ساختگی با تولید سادگی نامفهوم
+              </p>
+              <p
+                style="margin-bottom: 0; text-align: end; color: var(--primary)"
+              >
+                399.000 تومان
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- mobile -->
+        <div
+          class="slick-slider-products d-lg-none d-flex"
+          style="margin: 30px 0"
+        >
+          <div class="col-3 product-item">
+            <div class="item-img-container">
+              <img src="./assets/images/pic 1.png" alt="product" />
+              <div class="button-container">
+                <button class="item-button">
+                  انتخاب مشخصات
+                  <img src="./assets/icons/cart2.png" alt="cart" />
+                </button>
+                <button class="item-button">
+                  افزودن به علاقه مندی
+                  <img src="./assets/icons/favorite.png" alt="favorite" />
+                </button>
+              </div>
+            </div>
+            <div
+              class="item-details"
+              style="background-color: white; border-radius: 0 0 20px 20px"
+            >
+              <p class="item-title">لورم ایپسوم متن ساختگی</p>
+              <p class="item-description">
+                لورم متن ساختگی با تولید سادگی نامفهوم
+              </p>
+              <p
+                style="margin-bottom: 0; text-align: end; color: var(--primary)"
+              >
+                399.000 تومان
+              </p>
+            </div>
+          </div>
+          <div class="col-3 product-item">
+            <div class="item-img-container">
+              <img src="./assets/images/pic 1.png" alt="product" />
+              <div class="button-container">
+                <button class="item-button">
+                  انتخاب مشخصات
+                  <img src="./assets/icons/cart2.png" alt="cart" />
+                </button>
+                <button class="item-button">
+                  افزودن به علاقه مندی
+                  <img src="./assets/icons/favorite.png" alt="favorite" />
+                </button>
+              </div>
+            </div>
+            <div
+              class="item-details"
+              style="background-color: white; border-radius: 0 0 20px 20px"
+            >
+              <p class="item-title">لورم ایپسوم متن ساختگی</p>
+              <p class="item-description">
+                لورم متن ساختگی با تولید سادگی نامفهوم
+              </p>
+              <p
+                style="margin-bottom: 0; text-align: end; color: var(--primary)"
+              >
+                399.000 تومان
+              </p>
+            </div>
+          </div>
+          <div class="col-3 product-item">
+            <div class="item-img-container">
+              <img src="./assets/images/pic 1.png" alt="product" />
+              <div class="button-container">
+                <button class="item-button">
+                  انتخاب مشخصات
+                  <img src="./assets/icons/cart2.png" alt="cart" />
+                </button>
+                <button class="item-button">
+                  افزودن به علاقه مندی
+                  <img src="./assets/icons/favorite.png" alt="favorite" />
+                </button>
+              </div>
+            </div>
+            <div
+              class="item-details"
+              style="background-color: white; border-radius: 0 0 20px 20px"
+            >
+              <p class="item-title">لورم ایپسوم متن ساختگی</p>
+              <p class="item-description">
+                لورم متن ساختگی با تولید سادگی نامفهوم
+              </p>
+              <p
+                style="margin-bottom: 0; text-align: end; color: var(--primary)"
+              >
+                399.000 تومان
+              </p>
+            </div>
+          </div>
+          <div class="col-3 product-item">
             <div class="item-img-container">
               <img src="./assets/images/pic 1.png" alt="product" />
               <div class="button-container">
@@ -366,20 +644,20 @@
         <button class="see-all-btn">مشاهده همه</button>
       </section>
       <!------------- services ------------->
-      <section class="services">
-        <div>
+      <section class="services row">
+        <div class="col-6 col-lg-3 mb-5 mb-lg-0">
           <img src="./assets/icons/best price.png" alt="price" />
           <p>تضمین قیمت</p>
         </div>
-        <div>
+        <div class="col-6 col-lg-3 mb-5 mb-lg-0">
           <img src="./assets/icons/original.png" alt="original" />
           <p>اصالت کالا</p>
         </div>
-        <div>
+        <div class="col-6 col-lg-3 mb-5 mb-lg-0">
           <img src="./assets/icons/customer support.png" alt="support" />
           <p>پشتیبانی قوی</p>
         </div>
-        <div>
+        <div class="col-6 col-lg-3 mb-5 mb-lg-0">
           <img src="./assets/icons/delivery.png" alt="delivery" />
           <p>ارسال فوری</p>
         </div>
@@ -387,16 +665,18 @@
       <!------------- footer ------------->
       <footer>
         <div class="row">
-          <div class="col-12 col-md-4 d-flex flex-column ps-4">
+          <div class="col-12 col-lg-4 ps-0 ps-lg-4 mb-4 mb-lg-0">
             <h3>دسترسی سریع</h3>
-            <a href="#">صفحه اصلی</a>
-            <a href="#">فروشگاه</a>
-            <a href="#">پشتیبانی</a>
-            <a href="#">پیگیری سفارشات</a>
-            <a href="#">درباره ما</a>
-            <a href="#">تماس با ما</a>
+            <div class="d-flex flex-lg-column flex-row justify-content-between flex-wrap">
+              <a href="#">صفحه اصلی</a>
+              <a href="#">فروشگاه</a>
+              <a href="#">پشتیبانی</a>
+              <a href="#">پیگیری سفارشات</a>
+              <a href="#">درباره ما</a>
+              <a href="#">تماس با ما</a>
+            </div>
           </div>
-          <div class="col-12 col-md-4 ps-4">
+          <div class="col-12 col-lg-4 ps-0 ps-lg-4 mb-4 mb-lg-0">
             <h3>درباره ما</h3>
             <p>
               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
@@ -407,7 +687,7 @@
               است.
             </p>
           </div>
-          <div class="col-12 col-md-4">
+          <div class="col-12 col-lg-4">
             <h3>ارتباط با ما</h3>
             <div style="margin-bottom: 15px">
               <span>تلفن پشتیبانی: </span>
@@ -415,7 +695,7 @@
               <span> / </span>
               <a href="#" style="font-weight: 300"> 1234 - 021 </a>
             </div>
-            <div style="margin-bottom: 15px">
+            <div style="margin-bottom: 20px">
               <span>آدرس:</span>
               <span style="font-weight: 300"
                 >لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</span
@@ -446,18 +726,18 @@
     ></script>
 
     <script type="text/javascript">
-      $(".slick-slider").slick({
+      $(".slick-slider-products").slick({
         slidesToShow: 3,
         infinite: true,
         slidesToScroll: 1,
         rtl: true,
+        dots: false,
         responsive: [
           {
             breakpoint: 992,
             settings: {
               slidesToShow: 2,
               slidesToScroll: 1,
-              dots: true,
             },
           },
           {
@@ -465,17 +745,9 @@
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
-              dots: true,
             },
           },
         ],
-      });
-      $("#prevBtn").click(function () {
-        $(".slick-slider").slick("slickPrev");
-      });
-
-      $("#nextBtn").click(function () {
-        $(".slick-slider").slick("slickNext");
       });
     </script>
   </body>
