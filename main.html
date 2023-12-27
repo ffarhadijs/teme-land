@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Include Slick Carousel CSS and JS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <title>Main</title>
+  </head>
+  <body style="background-color: var(--gray)">
+    <main class="container-xl" style="margin-top: 50px">
+      <!------------- header ------------->
+      <header style="margin-bottom: 50px">
+        <div class="top-header">
+          <img src="./assets/icons/logo.png" alt="logo" />
+          <div
+            class="d-flex flex-row align-items-center"
+            style="column-gap: 20px"
+          >
+            <button class="simple-btn">ورود / ثبت نام</button>
+            <button class="filled-btn">
+              سبد خرید
+              <img src="./assets/icons/cart2.png" alt="cart" />
+            </button>
+          </div>
+        </div>
+        <div class="navbar-list">
+          <a href="#">خانه</a>
+          <a href="#">بلوز و شومیز</a>
+          <a href="#">اسپرت و راحتی</a>
+          <a href="#">شلوار</a>
+          <a href="#">جوراب</a>
+          <a href="#">کیف</a>
+          <a href="#">دامن</a>
+          <a href="#">روپوش</a>
+          <a href="#">پیراهن</a>
+        </div>
+      </header>
+
+      <!------------- carousel ------------->
+      <section style="position: relative">
+        <div class="carousel carousel-dark slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="./assets/images/photo.png"
+                class="d-block w-100"
+                alt="carousel-item-1"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./assets/images/photo.png"
+                class="d-block w-100"
+                alt="carousel-item-2"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./assets/images/photo.png"
+                class="d-block w-100"
+                alt="carousel-item-3"
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+        <!------------- search-box ------------->
+        <div class="search-box">
+          <div>
+            <input type="text" placeholder="جستجوی محصول..." />
+            <button>
+              <img src="./assets/icons/search.png" alt="search" />
+            </button>
+          </div>
+        </div>
+      </section>
+      <!------------- last products ------------->
+      <section
+        class="last-products-section"
+        style="display: flex; flex-direction: column"
+      >
+        <h2>آخرین محصولات</h2>
+        <div class="row" style="margin: 30px 0">
+          <div class="col-3 product-item">
+            <div class="item-img-container">
+              <img src="./assets/images/pic 1.png" alt="product" />
+              <div class="button-container">
+                <button class="item-button">
+                  انتخاب مشخصات
+                  <img src="./assets/icons/cart2.png" alt="cart" />
+                </button>
+                <button class="item-button">
+                  افزودن به علاقه مندی
+                  <img src="./assets/icons/favorite.png" alt="favorite" />
+                </button>
+              </div>
+            </div>
+            <div
+              class="item-details"
+              style="background-color: white; border-radius: 0 0 20px 20px"
+            >
+              <p class="item-title">لورم ایپسوم متن ساختگی</p>
+              <p class="item-description">
+                لورم متن ساختگی با تولید سادگی نامفهوم
+              </p>
+              <p
+                style="margin-bottom: 0; text-align: end; color: var(--primary)"
+              >
+                399.000 تومان
+              </p>
+            </div>
+          </div>
+          <div class="col-3 product-item">
+            <div class="item-img-container">
+              <img src="./assets/images/pic 1.png" alt="product" />
+              <div class="button-container">
+                <button class="item-button">
+                  انتخاب مشخصات
+                  <img src="./assets/icons/cart2.png" alt="cart" />
+                </button>
+                <button class="item-button">
+                  افزودن به علاقه مندی
+                  <img src="./assets/icons/favorite.png" alt="favorite" />
+                </button>
+              </div>
+            </div>
+            <div
+              class="item-details"
+              style="background-color: white; border-radius: 0 0 20px 20px"
+            >
+              <p class="item-title">لورم ایپسوم متن ساختگی</p>
+              <p class="item-description">
+                لورم متن ساختگی با تولید سادگی نامفهوم
+              </p>
+              <p
+                style="margin-bottom: 0; text-align: end; color: var(--primary)"
+              >
+                399.000 تومان
+              </p>
+            </div>
+          </div>
+          <div class="col-3 product-item">
+            <div class="item-img-container">
+              <img src="./assets/images/pic 1.png" alt="product" />
+              <div class="button-container">
+                <button class="item-button">
+                  انتخاب مشخصات
+                  <img src="./assets/icons/cart2.png" alt="cart" />
+                </button>
+                <button class="item-button">
+                  افزودن به علاقه مندی
+                  <img src="./assets/icons/favorite.png" alt="favorite" />
+                </button>
+              </div>
+            </div>
+            <div
+              class="item-details"
+              style="background-color: white; border-radius: 0 0 20px 20px"
+            >
+              <p class="item-title">لورم ایپسوم متن ساختگی</p>
+              <p class="item-description">
+                لورم متن ساختگی با تولید سادگی نامفهوم
+              </p>
+              <p
+                style="margin-bottom: 0; text-align: end; color: var(--primary)"
+              >
+                399.000 تومان
+              </p>
+            </div>
+          </div>
+          <div class="col-3 product-item" style="padding-left: 0 !important">
+            <div class="item-img-container">
+              <img src="./assets/images/pic 1.png" alt="product" />
+              <div class="button-container">
+                <button class="item-button">
+                  انتخاب مشخصات
+                  <img src="./assets/icons/cart2.png" alt="cart" />
+                </button>
+                <button class="item-button">
+                  افزودن به علاقه مندی
+                  <img src="./assets/icons/favorite.png" alt="favorite" />
+                </button>
+              </div>
+            </div>
+            <div
+              class="item-details"
+              style="background-color: white; border-radius: 0 0 20px 20px"
+            >
+              <p class="item-title">لورم ایپسوم متن ساختگی</p>
+              <p class="item-description">
+                لورم متن ساختگی با تولید سادگی نامفهوم
+              </p>
+              <p
+                style="margin-bottom: 0; text-align: end; color: var(--primary)"
+              >
+                399.000 تومان
+              </p>
+            </div>
+          </div>
+        </div>
+        <button class="see-all-btn">مشاهده همه</button>
+      </section>
+      <!------------- popular products ------------->
+      <section
+        class="last-products-section"
+        style="display: flex; flex-direction: column"
+      >
+        <h2>پرطرفدار</h2>
+        <div class="row" style="margin: 30px 0">
+          <div class="col-3 product-item">
+            <div class="item-img-container">
+              <img src="./assets/images/pic 1.png" alt="product" />
+              <div class="button-container">
+                <button class="item-button">
+                  انتخاب مشخصات
+                  <img src="./assets/icons/cart2.png" alt="cart" />
+                </button>
+                <button class="item-button">
+                  افزودن به علاقه مندی
+                  <img src="./assets/icons/favorite.png" alt="favorite" />
+                </button>
+              </div>
+            </div>
+            <div
+              class="item-details"
+              style="background-color: white; border-radius: 0 0 20px 20px"
+            >
+              <p class="item-title">لورم ایپسوم متن ساختگی</p>
+              <p class="item-description">
+                لورم متن ساختگی با تولید سادگی نامفهوم
+              </p>
+              <p
+                style="margin-bottom: 0; text-align: end; color: var(--primary)"
+              >
+                399.000 تومان
+              </p>
+            </div>
+          </div>
+          <div class="col-3 product-item">
+            <div class="item-img-container">
+              <img src="./assets/images/pic 1.png" alt="product" />
+              <div class="button-container">
+                <button class="item-button">
+                  انتخاب مشخصات
+                  <img src="./assets/icons/cart2.png" alt="cart" />
+                </button>
+                <button class="item-button">
+                  افزودن به علاقه مندی
+                  <img src="./assets/icons/favorite.png" alt="favorite" />
+                </button>
+              </div>
+            </div>
+            <div
+              class="item-details"
+              style="background-color: white; border-radius: 0 0 20px 20px"
+            >
+              <p class="item-title">لورم ایپسوم متن ساختگی</p>
+              <p class="item-description">
+                لورم متن ساختگی با تولید سادگی نامفهوم
+              </p>
+              <p
+                style="margin-bottom: 0; text-align: end; color: var(--primary)"
+              >
+                399.000 تومان
+              </p>
+            </div>
+          </div>
+          <div class="col-3 product-item">
+            <div class="item-img-container">
+              <img src="./assets/images/pic 1.png" alt="product" />
+              <div class="button-container">
+                <button class="item-button">
+                  انتخاب مشخصات
+                  <img src="./assets/icons/cart2.png" alt="cart" />
+                </button>
+                <button class="item-button">
+                  افزودن به علاقه مندی
+                  <img src="./assets/icons/favorite.png" alt="favorite" />
+                </button>
+              </div>
+            </div>
+            <div
+              class="item-details"
+              style="background-color: white; border-radius: 0 0 20px 20px"
+            >
+              <p class="item-title">لورم ایپسوم متن ساختگی</p>
+              <p class="item-description">
+                لورم متن ساختگی با تولید سادگی نامفهوم
+              </p>
+              <p
+                style="margin-bottom: 0; text-align: end; color: var(--primary)"
+              >
+                399.000 تومان
+              </p>
+            </div>
+          </div>
+          <div class="col-3 product-item" style="padding-left: 0 !important">
+            <div class="item-img-container">
+              <img src="./assets/images/pic 1.png" alt="product" />
+              <div class="button-container">
+                <button class="item-button">
+                  انتخاب مشخصات
+                  <img src="./assets/icons/cart2.png" alt="cart" />
+                </button>
+                <button class="item-button">
+                  افزودن به علاقه مندی
+                  <img src="./assets/icons/favorite.png" alt="favorite" />
+                </button>
+              </div>
+            </div>
+            <div
+              class="item-details"
+              style="background-color: white; border-radius: 0 0 20px 20px"
+            >
+              <p class="item-title">لورم ایپسوم متن ساختگی</p>
+              <p class="item-description">
+                لورم متن ساختگی با تولید سادگی نامفهوم
+              </p>
+              <p
+                style="margin-bottom: 0; text-align: end; color: var(--primary)"
+              >
+                399.000 تومان
+              </p>
+            </div>
+          </div>
+        </div>
+        <button class="see-all-btn">مشاهده همه</button>
+      </section>
+      <!------------- services ------------->
+      <section class="services">
+        <div>
+          <img src="./assets/icons/best price.png" alt="price" />
+          <p>تضمین قیمت</p>
+        </div>
+        <div>
+          <img src="./assets/icons/original.png" alt="original" />
+          <p>اصالت کالا</p>
+        </div>
+        <div>
+          <img src="./assets/icons/customer support.png" alt="support" />
+          <p>پشتیبانی قوی</p>
+        </div>
+        <div>
+          <img src="./assets/icons/delivery.png" alt="delivery" />
+          <p>ارسال فوری</p>
+        </div>
+      </section>
+      <!------------- footer ------------->
+      <footer>
+        <div class="row">
+          <div class="col-12 col-md-4 d-flex flex-column ps-4">
+            <h3>دسترسی سریع</h3>
+            <a href="#">صفحه اصلی</a>
+            <a href="#">فروشگاه</a>
+            <a href="#">پشتیبانی</a>
+            <a href="#">پیگیری سفارشات</a>
+            <a href="#">درباره ما</a>
+            <a href="#">تماس با ما</a>
+          </div>
+          <div class="col-12 col-md-4 ps-4">
+            <h3>درباره ما</h3>
+            <p>
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+              استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+              در ستون و سطرآنچنان که لازم است. لورم ایپسوم متن ساختگی با تولید
+              سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
+              چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم
+              است.
+            </p>
+          </div>
+          <div class="col-12 col-md-4">
+            <h3>ارتباط با ما</h3>
+            <div style="margin-bottom: 15px">
+              <span>تلفن پشتیبانی: </span>
+              <a href="#" class="" style="font-weight: 300"> 09123456789</a>
+              <span> / </span>
+              <a href="#" style="font-weight: 300"> 1234 - 021 </a>
+            </div>
+            <div style="margin-bottom: 15px">
+              <span>آدرس:</span>
+              <span style="font-weight: 300"
+                >لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</span
+              >
+            </div>
+            <div class="social-icons">
+              <a href="#"
+                ><img src="./assets/icons/Telegram.png" alt="telegram"
+              /></a>
+              <a href="#"
+                ><img src="./assets/icons/instagram.png" alt="instagram"
+              /></a>
+            </div>
+          </div>
+        </div>
+        <div class="foot-note">
+          <p style="margin: 10px 0 10px 0; display: inline-block">
+            کلیه حقوق مادی و معنوی این سایت محفوظ است
+          </p>
+        </div>
+      </footer>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="text/javascript">
+      $(".slick-slider").slick({
+        slidesToShow: 3,
+        infinite: true,
+        slidesToScroll: 1,
+        rtl: true,
+        responsive: [
+          {
+            breakpoint: 992,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              dots: true,
+            },
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              dots: true,
+            },
+          },
+        ],
+      });
+      $("#prevBtn").click(function () {
+        $(".slick-slider").slick("slickPrev");
+      });
+
+      $("#nextBtn").click(function () {
+        $(".slick-slider").slick("slickNext");
+      });
+    </script>
+  </body>
+</html>
