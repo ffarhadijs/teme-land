@@ -37,7 +37,11 @@
     <header class="container-xl">
       <div class="top-header">
         <div>
-          <button class="menu-btn d-lg-none d-inline-block" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+          <button
+            class="menu-btn d-lg-none d-inline-block"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#sidebar"
+          >
             <img src="./assets/icons/menu.png" alt="menu" />
           </button>
           <img src="./assets/icons/logo.png" alt="logo" />
@@ -49,20 +53,44 @@
           <button class="simple-btn d-none d-lg-inline-block">
             ورود / ثبت نام
           </button>
-          <button class="filled-btn d-none d-lg-inline-block">
+
+          <button
+            class="filled-btn d-none d-lg-inline-block"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#cartSidebar"
+          >
             سبد خرید
             <img src="./assets/icons/cart2.png" alt="cart" />
           </button>
+
           <button class="search-btn d-lg-none d-flex">
             <img src="./assets/icons/search2.png" alt="search" />
           </button>
-          <button class="cart-button d-lg-none d-flex">
+          <button
+            class="cart-button d-lg-none d-flex"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#cartSidebar"
+          >
             <img src="./assets/icons/cart2.png" alt="cart" />
           </button>
         </div>
       </div>
       <div class="navbar-list">
-        <a href="#">خانه</a>
+        <div
+          style="
+            width: fit-content;
+            height: fit-content;
+            position: relative;
+            z-index: 1000 !important;
+          "
+        >
+          <button style="background-color: transparent">خانه</button>
+          <div class="sub-menu">
+            <a href="#"> خانه 1 </a>
+            <a href="#"> خانه 2 </a>
+            <a href="#"> خانه 3 </a>
+          </div>
+        </div>
         <a href="#">بلوز و شومیز</a>
         <a href="#">اسپرت و راحتی</a>
         <a href="#">شلوار</a>
@@ -75,11 +103,40 @@
     </header>
     <!--------------- sidebar ----------------->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar">
-      <div class="offcanvas-header" style="border-bottom: 1px solid black;">
-        <button type="button" style="margin-right: auto;" class="btn-close" data-bs-dismiss="offcanvas"></button>
+      <div class="offcanvas-header" style="border-bottom: 1px solid black">
+        <button
+          type="button"
+          style="margin-right: auto"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+        ></button>
       </div>
       <div class="offcanvas-body">
-        <a href="#">خانه</a>
+        <p class="d-inline-flex gap-1">
+          <button
+            style="border: none; outline: none; background-color: transparent"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseMenuItem"
+            aria-expanded="false"
+          >
+            خانه
+            <img
+              src="./assets/icons/left.png"
+              alt="down-arrow"
+              style="
+                width: 8px;
+                height: auto;
+                margin-right: 20px;
+              "
+            />
+          </button>
+        </p>
+        <div class="collapse" id="collapseMenuItem">
+          <a class="pe-3 mb-0 py-1" style="font-size: 14px" href="#"> خانه 1</a>
+          <a class="pe-3 mb-0 py-1" style="font-size: 14px" href="#"> خانه 2</a>
+          <a class="pe-3 mb-0 py-1" style="font-size: 14px" href="#"> خانه 3</a>
+        </div>
         <a href="#">بلوز و شومیز</a>
         <a href="#">اسپرت و راحتی</a>
         <a href="#">شلوار</a>
@@ -88,7 +145,25 @@
         <a href="#">دامن</a>
         <a href="#">روپوش</a>
         <a href="#">پیراهن</a>
-        
+      </div>
+    </div>
+    <!-- left -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="cartSidebar">
+      <div class="offcanvas-header">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+        ></button>
+        <h5 class="offcanvas-title">سبد خرید</h5>
+      </div>
+      <div class="offcanvas-body">
+        <ul id="cart-items"></ul>
+        <p id="total-price">قیمت کل: 0 تومان</p>
+
+        <div>
+          <button class="w-100 add-to-cart-btn">تکمیل خرید</button>
+        </div>
       </div>
     </div>
     <main class="container-xl">
@@ -667,7 +742,9 @@
         <div class="row">
           <div class="col-12 col-lg-4 ps-0 ps-lg-4 mb-4 mb-lg-0">
             <h3>دسترسی سریع</h3>
-            <div class="d-flex flex-lg-column flex-row justify-content-between flex-wrap">
+            <div
+              class="d-flex flex-lg-column flex-row justify-content-between flex-wrap"
+            >
               <a href="#">صفحه اصلی</a>
               <a href="#">فروشگاه</a>
               <a href="#">پشتیبانی</a>

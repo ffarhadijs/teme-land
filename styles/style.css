@@ -254,11 +254,22 @@ header {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-#product-item-price-sidebar, #product-item-details-sidebar{
+#product-item-price-sidebar,
+#product-item-details-sidebar {
   font-size: 14px;
   font-weight: 700;
   color: gray;
 }
+button[aria-expanded="false"] img {
+  rotate: -90deg;
+  transition: all 0.5s ease;
+}
+button[aria-expanded="true"] img {
+  rotate: 90deg;
+  transition: all .5s ease;
+
+}
+
 /* ----------------- footer ----------------- */
 footer {
   background-color: white;
