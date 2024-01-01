@@ -53,20 +53,39 @@
           <button class="simple-btn d-none d-lg-inline-block">
             ورود / ثبت نام
           </button>
-          <button class="filled-btn d-none d-lg-inline-block">
+
+          <button
+            class="filled-btn d-none d-lg-inline-block"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#cartSidebar"
+          >
             سبد خرید
             <img src="./assets/icons/cart2.png" alt="cart" />
           </button>
+
           <button class="search-btn d-lg-none d-flex">
             <img src="./assets/icons/search2.png" alt="search" />
           </button>
-          <button class="cart-button d-lg-none d-flex">
+          <button
+            class="cart-button d-lg-none d-flex"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#cartSidebar"
+          >
             <img src="./assets/icons/cart2.png" alt="cart" />
           </button>
         </div>
       </div>
       <div class="navbar-list">
-        <a href="#">خانه</a>
+        <div
+          style="width: fit-content; height: fit-content; position: relative"
+        >
+          <button style="background-color: transparent">خانه</button>
+          <div class="sub-menu">
+            <a href="#"> خانه 1 </a>
+            <a href="#"> خانه 2 </a>
+            <a href="#"> خانه 3 </a>
+          </div>
+        </div>
         <a href="#">بلوز و شومیز</a>
         <a href="#">اسپرت و راحتی</a>
         <a href="#">شلوار</a>
@@ -78,6 +97,7 @@
       </div>
     </header>
     <!--------------- sidebar ----------------->
+    <!-- right -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar">
       <div class="offcanvas-header" style="border-bottom: 1px solid black">
         <button
@@ -99,13 +119,33 @@
         <a href="#">پیراهن</a>
       </div>
     </div>
+    <!-- left -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="cartSidebar">
+      <div class="offcanvas-header">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+        ></button>
+        <h5 class="offcanvas-title">سبد خرید</h5>
+      </div>
+      <div class="offcanvas-body">
+        <ul id="cart-items"></ul>
+        <p id="total-price">قیمت کل: 0 تومان</p>
+
+        <div>
+          <button class="w-100 add-to-cart-btn">تکمیل خرید</button>
+        </div>
+      </div>
+    </div>
+
     <main class="container-xl">
       <!------------- main section ------------->
       <section class="product-section" style="margin-bottom: 50px">
         <div class="row">
           <div class="order-1 order-lg-0 col-12 col-lg-6 product-details">
-            <h1>مانتو نارسیس</h1>
-            <p class="product-price">1.550.000 تومان</p>
+            <h1 id="product-name">مانتو نارسیس</h1>
+            <p class="product-price" id="product-price">1.550.000 تومان</p>
             <div style="margin-bottom: 30px">
               <p class="product-info-title">مشخصات:</p>
               <p class="product-info">کد محصول : 125412</p>
@@ -114,20 +154,20 @@
               <p class="product-info">فری سایز</p>
             </div>
             <div>
-              <label for="color">رنگ:</label>
-              <select class="form-select" id="color">
+              <label for="product-color">رنگ:</label>
+              <select class="form-select" id="product-color">
                 <option selected disabled>انتخاب کنید</option>
-                <option value="1">زرد</option>
-                <option value="2">قرمز</option>
-                <option value="3">سبز</option>
+                <option value="زرد">زرد</option>
+                <option value="قرمز">قرمز</option>
+                <option value="سبز">سبز</option>
               </select>
 
-              <label for="size">سایز:</label>
-              <select class="form-select" id="size">
+              <label for="product-size">سایز:</label>
+              <select class="form-select" id="product-size">
                 <option selected disabled>انتخاب کنید</option>
-                <option value="1">42</option>
-                <option value="2">44</option>
-                <option value="3">46</option>
+                <option value="42">42</option>
+                <option value="44">44</option>
+                <option value="46">46</option>
               </select>
             </div>
 
@@ -158,8 +198,8 @@
                   </button>
                   <input
                     type="number"
-                    id="numberInput"
-                    value="0"
+                    id="product-count"
+                    value="1"
                     oninput="updateNumber(this.value)"
                   />
                   <button
@@ -169,7 +209,12 @@
                     +
                   </button>
                 </div>
-                <button class="add-to-cart-btn">افزودن به سبد خرید</button>
+                <button
+                  class="add-to-cart-btn"
+                  onclick="addToCartProductPage()"
+                >
+                  افزودن به سبد خرید
+                </button>
               </div>
             </div>
             <div>
@@ -203,9 +248,10 @@
               src="./assets/images/pic 1.png"
               alt="product"
               class="product-main-img"
+              id="main-gallery-img"
             />
             <div
-              class="w-100 row product-img-list"
+              class="w-100 row product-img-list slick-slider-products-gallery"
               style="
                 margin-right: 0 !important;
                 margin-top: 10px !important;
@@ -216,22 +262,29 @@
                 src="./assets/images/pic 1.png"
                 alt="product"
                 class="col-3"
+                onclick="changeGalleryImg(this)"
+                role="button"
               />
               <img
                 src="./assets/images/pic 1.png"
                 alt="product"
                 class="col-3"
+                onclick="changeGalleryImg(this)"
+                role="button"
               />
               <img
                 src="./assets/images/pic 1.png"
                 alt="product"
                 class="col-3"
+                onclick="changeGalleryImg(this)"
+                role="button"
               />
               <img
                 src="./assets/images/pic 1.png"
                 alt="product"
                 class="col-3"
-                style="padding-left: 0 !important"
+                onclick="changeGalleryImg(this)"
+                role="button"
               />
             </div>
           </div>
@@ -329,5 +382,30 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript">
+      $(".slick-slider-products-gallery").slick({
+        slidesToShow: 3,
+        infinite: true,
+        slidesToScroll: 1,
+        rtl: true,
+        dots: false,
+        responsive: [
+          {
+            breakpoint: 992,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
+      });
+    </script>
   </body>
 </html>
