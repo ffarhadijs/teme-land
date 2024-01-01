@@ -61,9 +61,13 @@ function addToCartProductPage() {
   var cartItemsContainer = document.getElementById("cart-items");
 
   var existingItem = findExistingCartItem(productName);
+
   if (existingItem) {
     existingItem.quantity = productQuantity;
+    existingItem.productColor = productColor;
+    existingItem.productSize = productSize;
     updateCartItem(existingItem);
+
   } else {
     var listItem = createCartItem(
       productName,
@@ -88,6 +92,8 @@ function findExistingCartItem(productName) {
       return {
         element: item,
         quantity: parseInt(item.dataset.quantity),
+        productColor: item.dataset.productColor,
+        productSize: item.dataset.productSize,
       };
     }
   }
